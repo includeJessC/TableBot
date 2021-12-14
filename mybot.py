@@ -36,12 +36,12 @@ def send_random(message):
 
 
 @BOT.message_handler(commands=['hello'], content_types=['text'])
-def send_random(message):
+def send_hui(message):
     """
     random number.
     """
     BOT.send_message(message.chat.id,
-                     f'Пошел в пизду')
+                     'Пошел в пизду')
 
 
 BOT.infinity_polling()
