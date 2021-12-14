@@ -20,7 +20,7 @@ def send_welcome(message):
 @BOT.message_handler(commands=['deadline'], content_types=['text'])
 def send_random(message):
     """
-    high level support for doing this and that.
+    random number.
     """
     r_c = re.findall(r'\d+', message.text)
     if len(r_c) == 0:
