@@ -12,7 +12,7 @@ BOT = telebot.TeleBot("5097013736:AAHOj0LU2GXj8dE2DXDMZlg8vFL8QRdhy0Q", parse_mo
 @BOT.message_handler(commands=['start', 'help'])
 def send_welcome(message):
     """
-    replying.
+    replyingk.
     """
     BOT.reply_to(message, "Howdy, how are you doing?")
 
