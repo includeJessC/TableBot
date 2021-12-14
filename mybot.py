@@ -49,8 +49,8 @@ def send_table(message):
     if len(list_words) < 2:
         BOT.send_message(message.chat.id, 'Не надо так')
         return
-    number_of_fields = list_words[0]
-    if len(number_of_fields) == 0:
+    number_of_fields = int(list_words[0])
+    if number_of_fields == 0:
         BOT.send_message(message.chat.id, 'Не надо так')
         return
     row = []
