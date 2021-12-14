@@ -1,5 +1,5 @@
 """
-high level support for doing this and that.
+bot for parsing tables
 """
 import os
 
@@ -14,15 +14,15 @@ BOT = telebot.TeleBot(TOKEN, parse_mode=None)
 @BOT.message_handler(commands=['start', 'help'])
 def send_welcome(message):
     """
-    replying.
+    info about commands
     """
-    BOT.reply_to(message, "Howdy, how are you doing?")
+    BOT.reply_to(message, 'Я могу: \n /table_text - выведет таблицу строкой по параметрам, введенным через пробел: количество столбцов, количество строк, названия строк, поэлементно строки \n /table_html - принимает те же параметры, что первая, но выдает html версию \n /to_text - переводит таблицу html, поданную текстом, в обычный строчный вариант ')
 
 
 @BOT.message_handler(commands=['table_text'], content_types=['text'])
 def send_table(message):
     """
-    making table
+    making table string
     """
     table = PrettyTable()
     list_words = message.text.split()
@@ -59,9 +59,9 @@ def send_table(message):
 
 
 @BOT.message_handler(commands=['table_html'], content_types=['text'])
-def send_table(message):
+def send_html_table(message):
     """
-    making table
+    making html-table
     """
     table = PrettyTable()
     list_words = message.text.split()
@@ -98,9 +98,9 @@ def send_table(message):
 
 
 @BOT.message_handler(commands=['to_text'], content_types=['text'])
-def send_table(message):
+def send_table_from_html(message):
     """
-    making table
+    making string-table from html
     """
     list_words = message.text[8:]
     string_s = from_html_one(list_words).get_string()
