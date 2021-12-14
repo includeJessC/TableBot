@@ -5,7 +5,7 @@ import os
 
 import telebot
 
-from prettytable import PrettyTable, from_html_one
+from prettytable import PrettyTable, from_html_one,  MSWORD_FRIENDLY
 
 TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 BOT = telebot.TeleBot(TOKEN, parse_mode=None)
@@ -32,6 +32,7 @@ def send_table(message):
     making table string
     """
     table = PrettyTable()
+    table.set_style(MSWORD_FRIENDLY)
     list_words = message.text.split()
     if len(list_words) < 3:
         BOT.send_message(message.chat.id, 'Не надо так')
@@ -71,6 +72,7 @@ def send_html_table(message):
     making html-table
     """
     table = PrettyTable()
+    table.set_style(MSWORD_FRIENDLY)
     list_words = message.text.split()
     if len(list_words) < 3:
         BOT.send_message(message.chat.id, 'Не надо так')
@@ -110,6 +112,8 @@ def send_table_from_html(message):
     making string-table from html
     """
     list_words = message.text[8:]
+    string_s = PrettyTable()
+    string_s.set_style(MSWORD_FRIENDLY)
     string_s = from_html_one(list_words).get_string()
     BOT.send_message(message.chat.id,
                      string_s)
