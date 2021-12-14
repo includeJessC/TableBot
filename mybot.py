@@ -7,6 +7,8 @@ import os
 
 import telebot
 
+from prettytable import PrettyTable
+
 TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 BOT = telebot.TeleBot(TOKEN, parse_mode=None)
 
@@ -37,13 +39,35 @@ def send_random(message):
                      f'Сейчас стоит делать: {random.randint(r_min, r_max)}')
 
 
-@BOT.message_handler(commands=['hello'])
-def send_hui(message):
+@BOT.message_handler(commands=['table_text'], content_types=['text'])
+def send_table(message):
     """
-    random number.
+    making table
     """
+    table = PrettyTable()
+    list_words = message.text.split()
+    number_of_fields = list_words[0]
+    if len(number_of_fields) == 0:
+        BOT.send_message(message.chat.id, 'Не надо так')
+    number_of_rows = list_words[1]
+    row = []
+    for i in range(2, len(list_words)):
+        if i < len(list_words) + number_of_fields:
+            table.field_names.append(list_words[i])
+        else:
+            if len(row) == number_of_fields:
+                table.add_row(row)
+                row = []
+            else:
+                row.append(list_words[i])
+    s = table.get_string()
     BOT.send_message(message.chat.id,
-                     'Пошел в пизду')
+                     s)
+    
+
+
+
+
 
 
 BOT.infinity_polling()
