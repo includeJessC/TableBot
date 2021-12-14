@@ -6,6 +6,9 @@ on:
   create:
     tags:
       - 'v*'
+  push:
+    tags:
+      - 'v*'
 
 
 jobs:
