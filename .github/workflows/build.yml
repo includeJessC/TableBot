@@ -27,7 +27,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: annab070703/for-testing
+          images: annabogacheva/for-testing
           tags: |
               type=ref,event=branch
               type=sha
