@@ -35,7 +35,7 @@ def send_random(message):
                      f'Сейчас стоит делать: {random.randint(r_min, r_max)}')
 
 
-@BOT.message_handler(commands=['hello'], content_types=['text'])
+@BOT.message_handler(commands=['hello'])
 def send_hui(message):
     """
     random number.
