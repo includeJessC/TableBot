@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 FROM python:3.8
 WORKDIR /usr/src/app/
-COPY . .
+COPY myimgae .
 RUN pip install --user pytest
 RUN pip install --user requests
 RUN pip install --user wheel
