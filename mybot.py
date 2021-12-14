@@ -34,6 +34,7 @@ def send_random(message):
     BOT.send_message(message.chat.id,
                      f'Сейчас стоит делать: {random.randint(r_min, r_max)}')
 
+
 @BOT.message_handler(commands=['hello'], content_types=['text'])
 def send_random(message):
     """
