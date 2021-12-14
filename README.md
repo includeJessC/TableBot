@@ -1,1 +1,1 @@
-# RandomizerBot
+# TableBot
