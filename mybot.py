@@ -36,11 +36,11 @@ def send_table(message):
     table = PrettyTable()
     list_words = message.text.split()
     if len(list_words) < 3:
-        BOT.send_message(message.chat.id, 'Не надо так')
+        BOT.send_message(message.chat.id, 'Не надо так, неправильно введены параметры')
         return
     number_of_fields = int(list_words[1])
     if number_of_fields == 0:
-        BOT.send_message(message.chat.id, 'Не надо так')
+        BOT.send_message(message.chat.id, 'Не надо так, неправильно введены параметры')
         return
     row = []
     fields = []
@@ -75,11 +75,11 @@ def send_html_table(message):
     table = PrettyTable()
     list_words = message.text.split()
     if len(list_words) < 3:
-        BOT.send_message(message.chat.id, 'Не надо так')
+        BOT.send_message(message.chat.id, 'Не надо так, неправильно введены параметры')
         return
     number_of_fields = int(list_words[1])
     if number_of_fields == 0:
-        BOT.send_message(message.chat.id, 'Не надо так')
+        BOT.send_message(message.chat.id, 'Не надо так, неправильно введены параметры')
         return
     row = []
     fields = []
@@ -125,11 +125,11 @@ def send_json_table(message):
     table = PrettyTable()
     list_words = message.text.split()
     if len(list_words) < 3:
-        BOT.send_message(message.chat.id, 'Не надо так')
+        BOT.send_message(message.chat.id, 'Не надо так, неправильно введены параметры')
         return
     number_of_fields = int(list_words[1])
     if number_of_fields == 0:
-        BOT.send_message(message.chat.id, 'Не надо так')
+        BOT.send_message(message.chat.id, 'Не надо так, неправильно введены параметры')
         return
     row = []
     fields = []
