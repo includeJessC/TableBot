@@ -49,7 +49,6 @@ def send_table(message):
     number_of_fields = list_words[0]
     if len(number_of_fields) == 0:
         BOT.send_message(message.chat.id, 'Не надо так')
-    number_of_rows = list_words[1]
     row = []
     for i in range(2, len(list_words)):
         if i < len(list_words) + number_of_fields:
@@ -60,10 +59,9 @@ def send_table(message):
                 row = []
             else:
                 row.append(list_words[i])
-    s = table.get_string()
+    string_s = table.get_string()
     BOT.send_message(message.chat.id,
-                     s)
-    
+                     string_s)
 
 
 
