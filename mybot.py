@@ -14,15 +14,15 @@ def send_welcome(message):
 
 @bot.message_handler(commands=['deadline'], content_types=['text'])
 def send_random(message):
-    r = re.findall(r'\d+', message.text)
-    if (len(r) == 0):
+    r_c = re.findall(r'\d+', message.text)
+    if len(r_c) == 0:
         bot.send_message(message.chat.id, "Ты совсем тупой? Из чего мне выбирать?")
         return
-    if (len(r) == 1):
+    if len(r_c) == 1:
         bot.send_message(message.chat.id, "Пидор, 2 цифры надо")
         return
-    r_min = int(r[0])
-    r_max = int(r[1])
+    r_min = int(r_c[0])
+    r_max = int(r_c[1])
     bot.send_message(message.chat.id, 'Сейчас стоит делать: {}'.format(random.randint(r_min, r_max)))
 
 
