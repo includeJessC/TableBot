@@ -32,7 +32,7 @@ def send_random(message):
     r_min = int(r_c[0])
     r_max = int(r_c[1])
     BOT.send_message(message.chat.id,
-                     'Сейчас стоит делать: {}'.format(random.randint(r_min, r_max)))
+                     f'Сейчас стоит делать: {random.randint(r_min, r_max)}')
 
 
 BOT.infinity_polling()
