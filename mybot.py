@@ -45,7 +45,7 @@ def send_table(message):
     making table
     """
     table = PrettyTable()
-    list_words = message.text.split()
+    list_words = re.findall(r'\d+', message.text)
     number_of_fields = list_words[0]
     if len(number_of_fields) == 0:
         BOT.send_message(message.chat.id, 'Не надо так')
@@ -62,10 +62,6 @@ def send_table(message):
     string_s = table.get_string()
     BOT.send_message(message.chat.id,
                      string_s)
-
-
-
-
 
 
 BOT.infinity_polling()
