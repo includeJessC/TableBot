@@ -3,10 +3,12 @@ high level support for doing this and that.
 """
 import random  # for giving random things
 import re  # for parsing messages
+import os
 
 import telebot
 
-BOT = telebot.TeleBot("5097013736:AAHOj0LU2GXj8dE2DXDMZlg8vFL8QRdhy0Q", parse_mode=None)
+TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
+BOT = telebot.TeleBot(TOKEN, parse_mode=None)
 
 
 @BOT.message_handler(commands=['start', 'help'])
