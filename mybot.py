@@ -46,9 +46,13 @@ def send_table(message):
     """
     table = PrettyTable()
     list_words = re.findall(r'\d+', message.text)
+    if len(list_words) < 2:
+        BOT.send_message(message.chat.id, 'Не надо так')
+        return
     number_of_fields = list_words[0]
     if len(number_of_fields) == 0:
         BOT.send_message(message.chat.id, 'Не надо так')
+        return
     row = []
     for i in range(2, len(list_words)):
         if i < len(list_words) + number_of_fields:
