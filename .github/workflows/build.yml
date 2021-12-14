@@ -9,6 +9,8 @@ on:
   push:
     tags:
       - 'v*'
+    branches:
+      - 'main'
 
 
 jobs:
@@ -62,11 +64,11 @@ jobs:
         with:
           images: annabogacheva/for-testing
           tags: |
-              type=ref,event=tag
+              type=ref,event=branch
               type=sha
-              type=sha,prefix={{tag}}-
+              type=sha,prefix={{branch}}-
               type=sha,format=long
-              type=sha,format=long,prefix={{tag}}-
+              type=sha,format=long,prefix={{branch}}-
               type=raw,value=latest
 
       - name: Build and push
