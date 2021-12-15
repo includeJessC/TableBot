@@ -1,7 +1,7 @@
 # TableBot
 Сделано Богачевой Анной Андреевной. Сервер арендовала у прекрасного Google Cloud'a. Бот данный может в различные манипуляции насущные с таблицами. Собственно вот команды в которые он могет (их описания можно увидеть при вызове /help)
 ![image](https://user-images.githubusercontent.com/80039591/146097356-65595084-4ffb-420a-b3f0-6adf8e152610.png)
-И непосредственно примеры их выполнения
+И непосредственно примеры их выполнения\\
 ![image](https://user-images.githubusercontent.com/80039591/146097439-2ea519a3-fcee-4268-977b-d4083247b11e.png)
 ![image](https://user-images.githubusercontent.com/80039591/146097482-11e2f751-5fcd-47c4-8d55-62048b71951c.png)
 ![image](https://user-images.githubusercontent.com/80039591/146097577-49bd3839-8968-446e-8716-987b6d6b4504.png)
